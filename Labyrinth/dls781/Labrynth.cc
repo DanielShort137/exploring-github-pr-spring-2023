@@ -10,6 +10,11 @@
 //     came from the "Introduction to Algorithms" course offered</p>
 // <p>&nbsp;</p>
 // <h2>The Code - Labyrinth (Checking the link to the git repo in smartgit)</h2>
+// <p><marK> crm: I like how you had added this introduction with access to the hyperlink to the game
+// I would suggest that you would add a brief description of the game the reason I would suggest this is because
+// certain target audience would like some or others wouldn't </mark></p>
+
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -65,6 +70,8 @@ vector<int> first_step(vector<vector<vector<int>>> parent, vector<int> start, ve
 // <p>The game solution is based upon the popular Breadth First Search (BFS)
 //     algorithm for exploring and plotting a trajectory through the Labyrinth
 //     game.</p>
+// <p><mark> Crm: This is a quality example of pseudocode to show how you have gotten BFS 
+// algorithm and helps to explain the algorithm </mark></p>
 // <p>The algorithm is composed of several code blocks that help to perform the
 //     search.&nbsp; The image below provides the psuedo-code that helps to
 //     simplify the</p>
@@ -88,6 +95,8 @@ vector<int> first_step(vector<vector<vector<int>>> parent, vector<int> start, ve
 //     in each iteration through the main loop,&nbsp;</p>
 // <p>much of the details may be reasoned out by studying the basic graph below;
 //     which is explored using a BFS:</p>
+// <p><mark> Crm: I like how you have added this note and what prerequisites you need in order to 
+// understand this algorithm.</mark></p>
 // <p>&nbsp;</p>
 // <figure class="image"><img title="Iterative Steps of BFS Algo."
 //         src="media/Picture2.png" alt="" width="704" height="597">
@@ -95,7 +104,7 @@ vector<int> first_step(vector<vector<vector<int>>> parent, vector<int> start, ve
 // </figure>
 // <p>&nbsp;</p>
 vector<int> BFS(vector<vector<char>> game_map, vector<int> start, char goal) {
-
+    // <p><mark> crm: Your naming of variables  for the BFS algorithm is clear and coherent</mark></p>
     queue<vector<int>> queue;
     vector<vector<int>> colour;
     vector<vector<int>> distance;
@@ -118,6 +127,8 @@ vector<int> BFS(vector<vector<char>> game_map, vector<int> start, char goal) {
 
     // <p><strong><span style="color: rgb(224, 62, 45);">Algorithm
     //             loop</span></strong></p>
+    // <p><mark> crm: From a first reader perspective this is a great indication of 
+    // for where the loop of the alogrithm starts this is a great thing to add </mark></p>
     while (!queue.empty()) {
         vector<int> u = queue.front();
         queue.pop();
@@ -156,7 +167,9 @@ vector<int>  where_to_go(vector<vector<char>> game_map, vector<int> start, bool 
     } else {
         return BFS(game_map, start, 'T');
     }
-}                      
+}
+// <p><mark> crm: Like how you have deatailed description on how the main code functions
+// and that helps grasp the idea on how main works</mark></p>                     
 // <h2>The Main body of the Code is Here.</h2>
 // <p>the way that the challenge was organized was to have parameters passed
 //     into the main execution</p>
@@ -170,6 +183,8 @@ vector<int>  where_to_go(vector<vector<char>> game_map, vector<int> start, bool 
 // <p>to get back to where he started before a timer expired.</p>
 int main()
 {
+// <p><marK> crm: The variables in main are consistent and are easy to understand 
+// and the main code is formatted nicely</mark></p>
 
     cin >> r >> c >> alarm; cin.ignore();
     bool back = false;
