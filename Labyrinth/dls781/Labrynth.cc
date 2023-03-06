@@ -9,10 +9,31 @@
 // <p style="padding-left: 40px;">The information that helped solve this puzzle
 //     came from the "Introduction to Algorithms" course offered</p>
 // <p>&nbsp;</p>
-// <h2>The Code - Labyrinth (Checking the link to the git repo in smartgit)</h2>
-// <p><marK> crm: I like how you had added this introduction with access to the hyperlink to the game
-// I would suggest that you would add a brief description of the game the reason I would suggest this is because
-// certain target audience would like some or others wouldn't </mark></p>
+// <h2>The Code - Labyrinth</h2>
+// <p>In this game, we are asked to help the captain of a starship (Captain
+//     Kirk) with one of his missions.&nbsp; He has just landed on a planet that
+//     requires the exploration of an unknown environment (covered grid-style
+//     maze).&nbsp; There are only a limited amount of moves that Kirk is
+//     permitted, as each move takes away from his available air supply.&nbsp;
+//     If his air supply is depleted, then he dies.&nbsp; Once on the planet,
+//     Kirk's goal is to look through each cell of the unknown environment, and
+//     to make moves in any direction, and as he does reveal the maze of cells
+//     that have been explored; which are now <em>mapped </em>and
+//     <em>visible.&nbsp;&nbsp;</em>As each new cell is explored, Kirk must be
+//     careful not to touch any of the off-limit walls, or he instantly
+//     dies.&nbsp; Additionally, once the special <strong>"Control
+//         Center"</strong> cell is revealed, a countdown timer is
+//     started.&nbsp; At that time, he only has a few seconds to retrace the
+//     shortest path, from the control center back to where he was originally
+//     dropped off by the ship, and thus safely leave the planet.</p>
+// <p>&nbsp;</p>
+// <p><mark> crm: I like how you had added this introduction with access to the
+//         hyperlink to the game I would suggest that you would add a brief
+//         description of the game the reason I would suggest this is because
+//         certain target audience would like some or others wouldn't</mark></p>
+// <p><span style="background-color: rgb(45, 194, 107);"><mark>dls781:&nbsp;
+//             Thanks for the feedback.&nbsp; See the above
+//             description</mark></span></p>
 
 
 #include <iostream>
@@ -70,8 +91,11 @@ vector<int> first_step(vector<vector<vector<int>>> parent, vector<int> start, ve
 // <p>The game solution is based upon the popular Breadth First Search (BFS)
 //     algorithm for exploring and plotting a trajectory through the Labyrinth
 //     game.</p>
-// <p><mark> Crm: This is a quality example of pseudocode to show how you have gotten BFS 
-// algorithm and helps to explain the algorithm </mark></p>
+// <p><mark> Crm: This is a quality example of pseudocode to show how you have
+//         gotten BFS algorithm and helps to explain the algorithm</mark></p>
+// <p><mark>dls781:&nbsp; Again, thanks.&nbsp; I borrowed it from my class
+//         lecture notes in an introduction to algorithms class that I took last
+//         semester.&nbsp; Credit to Dr. Maxwell Young.</mark></p>
 // <p>The algorithm is composed of several code blocks that help to perform the
 //     search.&nbsp; The image below provides the psuedo-code that helps to
 //     simplify the</p>
@@ -95,8 +119,9 @@ vector<int> first_step(vector<vector<vector<int>>> parent, vector<int> start, ve
 //     in each iteration through the main loop,&nbsp;</p>
 // <p>much of the details may be reasoned out by studying the basic graph below;
 //     which is explored using a BFS:</p>
-// <p><mark> Crm: I like how you have added this note and what prerequisites you need in order to 
-// understand this algorithm.</mark></p>
+// <p><mark> Crm: I like how you have added this note and what prerequisites you
+//         need in order to understand this algorithm.</mark></p>
+// <p><mark>dls781:&nbsp; Same comment as above.</mark></p>
 // <p>&nbsp;</p>
 // <figure class="image"><img title="Iterative Steps of BFS Algo."
 //         src="media/Picture2.png" alt="" width="704" height="597">
@@ -104,7 +129,11 @@ vector<int> first_step(vector<vector<vector<int>>> parent, vector<int> start, ve
 // </figure>
 // <p>&nbsp;</p>
 vector<int> BFS(vector<vector<char>> game_map, vector<int> start, char goal) {
-    // <p><mark> crm: Your naming of variables  for the BFS algorithm is clear and coherent</mark></p>
+    // <p><mark> crm: Your naming of variables for the BFS algorithm is clear
+    //         and coherent</mark></p>
+    // <p><mark>dls781:&nbsp; I tried to keep the variable names consistent with
+    //         the pseudo-code above, so that it would be easier to make sense
+    //         of, once the algorithm was presented.</mark></p>
     queue<vector<int>> queue;
     vector<vector<int>> colour;
     vector<vector<int>> distance;
@@ -127,8 +156,12 @@ vector<int> BFS(vector<vector<char>> game_map, vector<int> start, char goal) {
 
     // <p><strong><span style="color: rgb(224, 62, 45);">Algorithm
     //             loop</span></strong></p>
-    // <p><mark> crm: From a first reader perspective this is a great indication of 
-    // for where the loop of the alogrithm starts this is a great thing to add </mark></p>
+    // <p><mark> crm: From a first reader perspective this is a great indication
+    //         of for where the loop of the alogrithm starts this is a great
+    //         thing to add</mark></p>
+    // <p><mark>dls781:&nbsp; Cool, I was hoping for that to be helpful for
+    //         those who may be looking back at the diagram of each iteration
+    //         through the loop.</mark></p>
     while (!queue.empty()) {
         vector<int> u = queue.front();
         queue.pop();
@@ -168,14 +201,18 @@ vector<int>  where_to_go(vector<vector<char>> game_map, vector<int> start, bool 
         return BFS(game_map, start, 'T');
     }
 }
-// <p><mark> crm: Like how you have deatailed description on how the main code functions
-// and that helps grasp the idea on how main works</mark></p>                     
+// <p><mark>&nbsp;crm: Like how you have detailed description on how the main
+//         code functions and that helps grasp the idea on how main
+//         works.</mark></p>
+// <p><mark>dls781:&nbsp; It was meant to mirror the flow of the pseudo-code
+//         above, for the sake of consistency and ease of understanding.</mark>
+// </p>
 // <h2>The Main body of the Code is Here.</h2>
 // <p>the way that the challenge was organized was to have parameters passed
 //     into the main execution</p>
 // <p>from the standard input, and then the code would right out the next "step"
 //     as a direction in either one of the</p>
-// <p style="text-align: center;">UP/DOWN/LEFT/RIGHT&nbsp;</p>
+// <p>UP/DOWN/LEFT/RIGHT&nbsp;</p>
 // <p>directions.&nbsp; That choice depends on whether or not the main character
 //     (Kirk) was still searching the maze,&nbsp;</p>
 // <p>or whether he had found the control room and needed to take his shortest
@@ -183,8 +220,12 @@ vector<int>  where_to_go(vector<vector<char>> game_map, vector<int> start, bool 
 // <p>to get back to where he started before a timer expired.</p>
 int main()
 {
-// <p><marK> crm: The variables in main are consistent and are easy to understand 
-// and the main code is formatted nicely</mark></p>
+// <p><mark>&nbsp;crm: The variables in main are consistent and are easy to
+//         understand and the main code is formatted nicely.</mark></p>
+// <p><mark>dls781:&nbsp; Thank you.&nbsp; I try to keep it clean.&nbsp; I
+//         probably could have added many comments to assist with reading the
+//         code.</mark></p>
+// <p>&nbsp;</p>
 
     cin >> r >> c >> alarm; cin.ignore();
     bool back = false;
